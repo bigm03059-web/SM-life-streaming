@@ -1,0 +1,8 @@
+node_modules/
+server/dist/
+server/.tsbuildinfo.server
+client/dist/
+client/.tsbuildinfo.client
+.pglite-data/
+.env
+*.tsbuildinfo

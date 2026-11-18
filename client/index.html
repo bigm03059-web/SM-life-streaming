@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="color-scheme" content="light dark" />
+    <!-- Empty inline icon: stops the browser fetching /favicon.ico, which
+         lives outside the space's routes and fails auth. -->
+    <link rel="icon" href="data:," />
+    <title>SM Life Streaming</title>
+    <!-- Stamp the saved theme (or the system preference on first open)
+         on <html> before first paint, so the app opens in the theme the
+         user picked last time with no flash of the other one. -->
+    <script>
+      try {
+        var saved = window.localStorage.getItem("sm-life-theme");
+        var theme =
+          saved === "light" || saved === "dark"
+            ? saved
+            : window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light";
+        document.documentElement.dataset.theme = theme;
+      } catch (e) {
+        /* storage unavailable — CSS falls back to the system setting */
+      }
+    </script>
+    <script src="./src/main.tsx" type="module"></script>
+  </head>
+  <body>
+    <div
+      data-generated-space-root=""
+      data-generated-space-slug="music-streaming-app"
+    ></div>
+  </body>
+</html>
